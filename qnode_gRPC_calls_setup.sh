@@ -80,11 +80,11 @@ sleep 1
 echo "🔍 Checking listenMultiaddr..."
 if line_exists "listenMultiaddr: /ip4/0.0.0.0/udp/8336/quic" .config/config.yml || line_exists "listenMultiaddr:/ip4/0.0.0.0/udp/8336/quic" .config/config.yml; then
     echo "🛠️ Modifying listenMultiaddr..."
-    sudo sed -i -E 's|^ *listenMultiaddr: /ip4/0.0.0.0/udp/8336/quic *$|  listenMultiaddr: /ip4/0.0.0.0/tcp/8336|' .config/config.yml || { echo "❌ Failed to modify listenMultiaddr! Exiting..."; exit 1; }
+    sudo sed -i -E 's|^ *listenMultiaddr: /ip4/0.0.0.0/udp/8336/quic *$|  listenMultiaddr:/ip4/0.0.0.0/tcp/8336|' .config/config.yml || { echo "❌ Failed to modify listenMultiaddr! Exiting..."; exit 1; }
     echo "✅ listenMultiaddr modified."
 
     # Double check if the new line exists after the change
-    if line_exists "listenMultiaddr: /ip4/0.0.0.0/tcp/8336" .config/config.yml; then
+    if line_exists "listenMultiaddr:/ip4/0.0.0.0/tcp/8336" .config/config.yml; then
         echo "✅ New listenMultiaddr line found."
     else
         echo "❌ New listenMultiaddr line not found after modification."
@@ -98,4 +98,4 @@ sleep 1
 echo""
 echo "✅ gRPC, REST, and Stats Collection setup was successful."
 echo""
-echo "✅ If you want to check manually just run: cd /root/ceremonyclient/node/.config/ && cat config.yml"
+echo "✅ If you want to check manually just run: cd /home/quilibrium/ceremonyclient/node/.config/ && cat config.yml"
