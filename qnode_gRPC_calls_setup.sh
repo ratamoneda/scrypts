@@ -84,7 +84,7 @@ if line_exists "listenMultiaddr: /ip4/0.0.0.0/udp/8336/quic" .config/config.yml 
     echo "✅ listenMultiaddr modified."
 
     # Double check if the new line exists after the change
-    if line_exists "listenMultiaddr:/ip4/0.0.0.0/tcp/8336" .config/config.yml; then
+    if line_exists "listenMultiaddr: /ip4/0.0.0.0/tcp/8336" .config/config.yml; then
         echo "✅ New listenMultiaddr line found."
     else
         echo "❌ New listenMultiaddr line not found after modification."
