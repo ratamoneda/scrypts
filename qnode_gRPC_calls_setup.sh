@@ -106,11 +106,12 @@ echo""
 echo "✅ If you want to check manually just run: cd /home/quilibrium/ceremonyclient/node/.config/ && cat config.yml"
 sleep 1
 
-echo"Setup firewall"
+echo "Install firewall"
 sudo apt install ufw -y
-sleep 3
+sleep 10
 sudo ufw enable
-sleep 2
+sleep 5
+echo "Setup firewall"
 sudo ufw allow 22
 sudo ufw allow 8336
 sudo ufw allow 443
@@ -126,6 +127,12 @@ sudo ufw allow 443/tcp
 sudo ufw allow 22/udp
 sudo ufw allow 8336/udp
 sudo ufw allow 443/udp
-sleep 2
+sleep 15
 sudo service ufw restart
-echo"Firewall setup done"
+sleep 5
+echo "Firewall setup done"
+echo "Install CPU limiter"
+sudo apt-get install gawk -y
+sleep 5
+sudo apt-get install -y cpulimit
+echo "ALL DONE!!!"
