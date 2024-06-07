@@ -108,7 +108,7 @@ sleep 2
 echo "Setup firewall"
 sudo apt install -y ufw
 echo "y" | sudo ufw enable
-sleep 2
+sleep 1
 sudo ufw allow 22
 sudo ufw allow 8336
 sudo ufw allow 443
@@ -124,12 +124,12 @@ sudo ufw allow 443/tcp
 sudo ufw allow 22/udp
 sudo ufw allow 8336/udp
 sudo ufw allow 443/udp
-sleep 15
+sleep 1
 sudo service ufw restart
-sleep 5
+sleep 1
 echo "Firewall setup done"
 echo "Install CPU limiter"
 sudo apt-get install gawk -y
-sleep 5
+sleep 1
 sudo apt-get install -y cpulimit
 echo "ALL DONE!!!"
