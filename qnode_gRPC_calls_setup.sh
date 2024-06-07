@@ -75,6 +75,18 @@ else
 fi
 
 sleep 1
+# Double check if old empty prop exists
+if line_exists "statsMultiaddr: \"\"" .config/config.yml; then
+    if sudo sed -i -E '/^ *statsMultiaddr: "" *$/d' .config/config.yml; then
+        echo "✅ Successfully removed EMPTY statsMultiaddr."
+    else
+        echo "❌ Failed to remove empty statsMultiaddr! Exiting..."
+        exit 1
+    fi
+else
+    echo "✅ Empty listenMultiaddr line not found."
+fi
+sleep 1
 
 # Step 3: Check and modify listenMultiaddr
 echo "🔍 Checking listenMultiaddr..."
