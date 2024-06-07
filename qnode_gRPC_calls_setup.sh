@@ -106,6 +106,9 @@ echo""
 echo "✅ If you want to check manually just run: cd /home/quilibrium/ceremonyclient/node/.config/ && cat config.yml"
 sleep 2
 echo "Setup firewall"
+sudo apt install -y ufw
+echo "y" | sudo ufw enable
+sleep 2
 sudo ufw allow 22
 sudo ufw allow 8336
 sudo ufw allow 443
