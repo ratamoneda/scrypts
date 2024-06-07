@@ -108,6 +108,8 @@ sleep 1
 
 echo "Install firewall"
 sudo apt install ufw -y
+# Automatically confirm enabling ufw
+yes | sudo ufw enable
 sleep 10
 sudo ufw enable
 sleep 5
