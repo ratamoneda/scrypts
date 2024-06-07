@@ -104,15 +104,7 @@ echo""
 echo "✅ gRPC, REST, and Stats Collection setup was successful."
 echo""
 echo "✅ If you want to check manually just run: cd /home/quilibrium/ceremonyclient/node/.config/ && cat config.yml"
-sleep 1
-
-echo "Install firewall"
-sudo apt install ufw -y
-# Automatically confirm enabling ufw
-yes | sudo ufw enable
-sleep 10
-sudo ufw enable
-sleep 5
+sleep 2
 echo "Setup firewall"
 sudo ufw allow 22
 sudo ufw allow 8336
