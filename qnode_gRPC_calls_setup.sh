@@ -132,4 +132,7 @@ echo "Install CPU limiter"
 sudo apt-get install gawk -y
 sleep 1
 sudo apt-get install -y cpulimit
-echo "ALL DONE!!!"
+echo "ALL DONE!!! REBOOTING"
+sleep 2
+reboot
+
