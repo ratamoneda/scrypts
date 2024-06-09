@@ -144,6 +144,8 @@ echo "Install CPU limiter"
 sudo apt-get install gawk -y
 sleep 1
 sudo apt-get install -y cpulimit
+sleep 1
+go install github.com/fullstorydev/grpcurl/cmd/grpcurl@latest
 echo "ALL DONE!!! REBOOTING"
 sleep 2
 reboot
